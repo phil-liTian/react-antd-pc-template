@@ -8,6 +8,8 @@ const resolve = dir => {
 module.exports = override(
   // 添加别名
   addWebpackAlias({
-    '@v': resolve('src/views')
+    '@v': resolve('src/views'),
+    '@c': resolve('src/components'),
+    '@u': resolve('src/utils')
   })
 )
