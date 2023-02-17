@@ -1,7 +1,8 @@
+import Login from '@v/login'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
+    <div>
+      <Login />
     </div>
   );
 }
