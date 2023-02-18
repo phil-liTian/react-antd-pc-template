@@ -1,10 +1,13 @@
-import Login from '@v/login'
-function App() {
+import { Provider } from 'react-redux'
+import Router from './router'
+import store from './store'
+
+function App () {
   return (
-    <div>
-      <Login />
-    </div>
-  );
+    <Provider store={store}>
+      <Router />
+    </Provider>
+  )
 }
 
-export default App;
+export default App
