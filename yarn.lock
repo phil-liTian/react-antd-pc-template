@@ -7752,7 +7752,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.5.6", "prop-types@^15.6.2", "prop-types@^15.8.1":
+"prop-types@^15.5.0", "prop-types@^15.5.6", "prop-types@^15.6.2", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmmirror.com/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -8307,6 +8307,13 @@
   "resolved" "https://registry.npmmirror.com/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
 
+"react-loadable@^5.5.0":
+  "integrity" "sha512-C8Aui0ZpMd4KokxRdVAm2bQtI03k2RMRNzOB+IipV3yxFTSVICv7WoUr5L9ALB5BmKO1iHgZtWM8EvYG83otdg=="
+  "resolved" "https://registry.npmmirror.com/react-loadable/-/react-loadable-5.5.0.tgz"
+  "version" "5.5.0"
+  dependencies:
+    "prop-types" "^15.5.0"
+
 "react-redux@^8.0.5":
   "integrity" "sha512-Q2f6fCKxPFpkXt1qNRZdEDLlScsDWyrgSj0mliK59qU6W5gvBiKkdMEG2lJzhd1rCctf0hb6EtePPLZ2e0m1uw=="
   "resolved" "https://registry.npmmirror.com/react-redux/-/react-redux-8.0.5.tgz"
@@ -8467,6 +8474,11 @@
   dependencies:
     "indent-string" "^4.0.0"
     "strip-indent" "^3.0.0"
+
+"redux-thunk@^2.4.2":
+  "integrity" "sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q=="
+  "resolved" "https://registry.npmmirror.com/redux-thunk/-/redux-thunk-2.4.2.tgz"
+  "version" "2.4.2"
 
 "redux@^4", "redux@^4.2.1":
   "integrity" "sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w=="
