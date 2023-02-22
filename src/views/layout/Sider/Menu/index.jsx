@@ -44,7 +44,12 @@ function SideMenu () {
   return (
     <div className='sidebar-menu-container'>
       {menuTreeNode.map((item, index) => (
-        <Menu mode='inline' theme='dark' key={item.key}>
+        <Menu
+          mode='inline'
+          theme='dark'
+          key={item.key}
+          defaultSelectedKeys={['about']}
+        >
           {item}
         </Menu>
       ))}

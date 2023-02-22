@@ -26,7 +26,7 @@ const Login = props => {
   }
 
   if (token) {
-    return <Navigate to='/dashboard'></Navigate>
+    return <Navigate to='/about'></Navigate>
   }
 
   return (
