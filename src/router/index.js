@@ -25,10 +25,4 @@ class Router extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    num: state.num
-  }
-}
-
-export default connect(mapStateToProps)(Router)
+export default connect(null)(Router)
