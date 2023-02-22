@@ -1,10 +1,14 @@
 import Loadable from 'react-loadable'
 import Loading from '@c/Loading'
+import Dashboard from '@v/dashboard'
+import About from '@v/about'
+import Bug from '@v/bug'
 
-const Dashboard = Loadable({
-  loader: () => import(/*webpackChunkName:'Dashboard'*/ '@v/dashboard'),
-  loading: Loading
-})
+// const Dashboard = import(/*webpackChunkName:'Dashboard'*/ '@v/dashboard')
+// Loadable({
+//   loader: () => import(/*webpackChunkName:'Dashboard'*/ '@v/dashboard'),
+//   loading: Loading
+// })
 // const Doc = Loadable({
 //   loader: () => import(/*webpackChunkName:'Doc'*/ '@/views/doc'),
 //   loading: Loading
@@ -119,9 +123,14 @@ const Dashboard = Loadable({
 const routeMap = [
   {
     path: '/dashboard',
-    component: new Dashboard(),
+    component: <Dashboard />,
     roles: ['admin', 'editor', 'guest']
-  }
+  },
+  {
+    path: '/about',
+    component: <About />,
+    roles: ['admin', 'editor', 'guest']
+  },
   // { path: '/doc', component: Doc, roles: ['admin', 'editor', 'guest'] },
   // { path: '/guide', component: Guide, roles: ['admin', 'editor'] },
   // { path: '/permission/explanation', component: Explanation, roles: ['admin'] },
@@ -171,7 +180,7 @@ const routeMap = [
   // { path: '/clipboard', component: Clipboard, roles: ['admin', 'editor'] },
   // { path: '/user', component: User, roles: ['admin'] },
   // { path: '/about', component: About, roles: ['admin', 'editor', 'guest'] },
-  // { path: '/bug', component: Bug, roles: ['admin'] },
+  { path: '/bug', component: <Bug />, roles: ['admin'] }
   // { path: '/error/404', component: Error404 }
 ]
 

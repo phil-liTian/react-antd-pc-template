@@ -3,6 +3,9 @@ import { Route, HashRouter, Routes, Navigate } from 'react-router-dom'
 import { connect, useSelector } from 'react-redux'
 import Login from '@v/login'
 import Layout from '@v/layout'
+import routeList from '@/config/routeMap.js'
+console.log('routeList', routeList)
+
 function RenderElement (props) {
   const { token } = useSelector(state => state.user)
   if (!token) {
@@ -18,7 +21,17 @@ class Router extends React.Component {
       <HashRouter>
         <Routes>
           <Route exact path='/login' element={<Login />}></Route>
-          <Route path='/' element={<RenderElement />}></Route>
+          <Route path='/' element={<RenderElement />}>
+            {routeList.map(route => {
+              return (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.component}
+                ></Route>
+              )
+            })}
+          </Route>
         </Routes>
       </HashRouter>
     )

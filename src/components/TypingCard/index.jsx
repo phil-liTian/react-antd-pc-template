@@ -3,7 +3,7 @@ import { Card } from 'antd'
 import Typing from '@u/typing'
 
 const TypingCard = props => {
-  const { source } = props
+  const { source, title } = props
   const sourceEl = useRef()
   const outputEl = useRef()
 
@@ -16,7 +16,7 @@ const TypingCard = props => {
   }, [])
 
   return (
-    <Card bordered={false} title='Card'>
+    <Card bordered={false} title={title}>
       <div
         style={{ display: 'none' }}
         ref={sourceEl}
