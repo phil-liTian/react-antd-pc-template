@@ -1,5 +1,6 @@
 import { Layout } from 'antd'
 import Sider from './Sider'
+import Header from './Header'
 import Content from './Content'
 
 const Main = props => {
@@ -8,6 +9,7 @@ const Main = props => {
       {/* 侧边栏 */}
       <Sider />
       <Layout>
+        <Header />
         {/* 内容区域 */}
         <Content />
       </Layout>

@@ -2539,6 +2539,11 @@
   "resolved" "https://registry.npmmirror.com/acorn/-/acorn-7.4.1.tgz"
   "version" "7.4.1"
 
+"add-event-listener@0.0.1":
+  "integrity" "sha512-hjRmkeDqFUWEFcDHP/Lp0Pa4MhIJk/oQX8B7lFiNrjBKHjf0q+ivCJrucY8d8UI5d0QkZgV2jGdAGXxEZcm3nA=="
+  "resolved" "https://registry.npmmirror.com/add-event-listener/-/add-event-listener-0.0.1.tgz"
+  "version" "0.0.1"
+
 "address@^1.0.1", "address@^1.1.2":
   "integrity" "sha512-4B/qKCfeE/ODUaAUpSwfzazo5x29WD4r3vXiWsB7I2mSDAihwEqKO+g8GELZUQSSAo5e1XTYh3ZVfLyxBc12nA=="
   "resolved" "https://registry.npmmirror.com/address/-/address-1.2.2.tgz"
@@ -4912,6 +4917,13 @@
   "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
   "resolved" "https://registry.npmmirror.com/fsevents/-/fsevents-2.3.2.tgz"
   "version" "2.3.2"
+
+"fullscreen@^1.1.1":
+  "integrity" "sha512-l9h4AZsE1KSwyDRcuwxGe1L1HaVNsFDhJc0BYNdEwxoJW0N/osjvk3CXz2jCZNXO5EPHCWU28LsrC8kg1t1IXA=="
+  "resolved" "https://registry.npmmirror.com/fullscreen/-/fullscreen-1.1.1.tgz"
+  "version" "1.1.1"
+  dependencies:
+    "add-event-listener" "0.0.1"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
@@ -8783,6 +8795,11 @@
     "@types/json-schema" "^7.0.4"
     "ajv" "^6.12.2"
     "ajv-keywords" "^3.4.1"
+
+"screenfull@^6.0.2":
+  "integrity" "sha512-AQdy8s4WhNvUZ6P8F6PB21tSPIYKniic+Ogx0AacBMjKP1GUHN2E9URxQHtCusiwxudnCKkdy4GrHXPPJSkCCw=="
+  "resolved" "https://registry.npmmirror.com/screenfull/-/screenfull-6.0.2.tgz"
+  "version" "6.0.2"
 
 "scroll-into-view-if-needed@^3.0.3":
   "integrity" "sha512-x+CW0kOzlFNOnseF0DBr0AJ5m+TgGmSOdEZwyiZW0gV87XBvxQKw5A8DvFFgabznA68XqLgVX+PwPX8OzsFvRA=="

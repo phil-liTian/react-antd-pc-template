@@ -119,7 +119,7 @@ const Dashboard = Loadable({
 const routeMap = [
   {
     path: '/dashboard',
-    component: Dashboard,
+    component: new Dashboard(),
     roles: ['admin', 'editor', 'guest']
   }
   // { path: '/doc', component: Doc, roles: ['admin', 'editor', 'guest'] },
