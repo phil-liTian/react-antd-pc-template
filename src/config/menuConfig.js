@@ -21,118 +21,118 @@ import {
 
 const menuList = [
   {
-    title: '首页',
-    path: '/dashboard',
+    label: '首页',
+    key: '/dashboard',
     icon: <HomeOutlined />,
     roles: ['admin', 'editor', 'guest']
   },
   {
-    title: '作者的github',
-    path: '/doc',
+    label: '作者的github',
+    key: '/doc',
     icon: <FileOutlined />,
     roles: ['admin', 'editor', 'guest']
   },
   {
-    title: '引导页',
-    path: '/guide',
+    label: '引导页',
+    key: '/guide',
     icon: <KeyOutlined />,
     roles: ['admin', 'editor']
   },
   {
-    title: '权限测试',
-    path: '/permission',
+    label: '权限测试',
+    key: '/permission',
     icon: <LockOutlined />,
     children: [
       {
-        title: '权限说明',
-        path: '/permission/explanation',
+        label: '权限说明',
+        key: '/permission/explanation',
         roles: ['admin']
       },
       {
-        title: 'admin页面',
-        path: '/permission/adminPage',
+        label: 'admin页面',
+        key: '/permission/adminPage',
         roles: ['admin']
       },
       {
-        title: 'guest页面',
-        path: '/permission/guestPage',
+        label: 'guest页面',
+        key: '/permission/guestPage',
         roles: ['guest']
       },
       {
-        title: 'editor页面',
-        path: '/permission/editorPage',
+        label: 'editor页面',
+        key: '/permission/editorPage',
         roles: ['editor']
       }
     ]
   },
   {
-    title: '组件',
-    path: '/components',
+    label: '组件',
+    key: '/components',
     icon: <AppstoreOutlined />,
     roles: ['admin', 'editor'],
     children: [
       {
-        title: '富文本',
-        path: '/components/richTextEditor',
+        label: '富文本',
+        key: '/components/richTextEditor',
         roles: ['admin', 'editor']
       },
       {
-        title: 'Markdown',
-        path: '/components/Markdown',
+        label: 'Markdown',
+        key: '/components/Markdown',
         roles: ['admin', 'editor']
       },
       {
-        title: '拖拽列表',
-        path: '/components/draggable',
+        label: '拖拽列表',
+        key: '/components/draggable',
         roles: ['admin', 'editor']
       }
     ]
   },
   {
-    title: '图表',
-    path: '/charts',
+    label: '图表',
+    key: '/charts',
     icon: <AreaChartOutlined />,
     roles: ['admin', 'editor'],
     children: [
       {
-        title: '键盘图表',
-        path: '/charts/keyboard',
+        label: '键盘图表',
+        key: '/charts/keyboard',
         roles: ['admin', 'editor']
       },
       {
-        title: '折线图',
-        path: '/charts/line',
+        label: '折线图',
+        key: '/charts/line',
         roles: ['admin', 'editor']
       },
       {
-        title: '混合图表',
-        path: '/charts/mix-chart',
+        label: '混合图表',
+        key: '/charts/mix-chart',
         roles: ['admin', 'editor']
       }
     ]
   },
   {
-    title: '路由嵌套',
-    path: '/nested',
+    label: '路由嵌套',
+    key: '/nested',
     icon: <ClusterOutlined />,
     roles: ['admin', 'editor'],
     children: [
       {
-        title: '菜单1',
-        path: '/nested/menu1',
+        label: '菜单1',
+        key: '/nested/menu1',
         children: [
           {
-            title: '菜单1-1',
-            path: '/nested/menu1/menu1-1',
+            label: '菜单1-1',
+            key: '/nested/menu1/menu1-1',
             roles: ['admin', 'editor']
           },
           {
-            title: '菜单1-2',
-            path: '/nested/menu1/menu1-2',
+            label: '菜单1-2',
+            key: '/nested/menu1/menu1-2',
             children: [
               {
-                title: '菜单1-2-1',
-                path: '/nested/menu1/menu1-2/menu1-2-1',
+                label: '菜单1-2-1',
+                key: '/nested/menu1/menu1-2/menu1-2-1',
                 roles: ['admin', 'editor']
               }
             ]
@@ -142,56 +142,56 @@ const menuList = [
     ]
   },
   {
-    title: '表格',
-    path: '/table',
+    label: '表格',
+    key: '/table',
     icon: <TableOutlined />,
     roles: ['admin', 'editor']
   },
   {
-    title: 'Excel',
-    path: '/excel',
+    label: 'Excel',
+    key: '/excel',
     icon: <FileExcelFilled />,
     roles: ['admin', 'editor'],
     children: [
       {
-        title: '导出Excel',
-        path: '/excel/export',
+        label: '导出Excel',
+        key: '/excel/export',
         roles: ['admin', 'editor']
       },
       {
-        title: '上传Excel',
-        path: '/excel/upload',
+        label: '上传Excel',
+        key: '/excel/upload',
         roles: ['admin', 'editor']
       }
     ]
   },
   {
-    title: 'Zip',
-    path: '/zip',
+    label: 'Zip',
+    key: '/zip',
     icon: <FileZipOutlined />,
     roles: ['admin', 'editor']
   },
   {
-    title: '剪贴板',
-    path: '/clipboard',
+    label: '剪贴板',
+    key: '/clipboard',
     icon: <CopyOutlined />,
     roles: ['admin', 'editor']
   },
   {
-    title: '用户管理',
-    path: '/user',
+    label: '用户管理',
+    key: '/user',
     icon: <UsergroupAddOutlined />,
     roles: ['admin']
   },
   {
-    title: '关于作者',
-    path: '/about',
+    label: '关于作者',
+    key: '/about',
     icon: <UserOutlined />,
     roles: ['admin', 'editor', 'guest']
   },
   {
-    title: 'Bug收集',
-    path: '/bug',
+    label: 'Bug收集',
+    key: '/bug',
     icon: <BugOutlined />,
     roles: ['admin']
   }

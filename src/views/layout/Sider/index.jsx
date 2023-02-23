@@ -1,15 +1,17 @@
 import { Layout } from 'antd'
+import { connect } from 'react-redux'
 import Logo from './Logo'
 import Menu from './Menu'
 const { Sider } = Layout
 
-const LayoutSider = () => {
+const LayoutSider = props => {
+  const { sidebarCollapsed } = props
   return (
-    <Sider>
+    <Sider collapsed={sidebarCollapsed}>
       <Logo />
       <Menu />
     </Sider>
   )
 }
 
-export default LayoutSider
+export default connect(state => state.app)(LayoutSider)
