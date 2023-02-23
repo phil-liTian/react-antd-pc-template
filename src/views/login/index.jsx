@@ -8,7 +8,7 @@ import { login, getUserInfo } from '@s/actions'
 import './index.scss'
 
 const Login = props => {
-  const { login, token } = props
+  const { login, token, getUserInfo } = props
   // 使用useForm可以使用form上的方法
   const [loading, setLoading] = useState(false)
 
@@ -77,4 +77,4 @@ const Login = props => {
   )
 }
 
-export default connect(state => state.user, { login })(Login)
+export default connect(state => state.user, { login, getUserInfo })(Login)

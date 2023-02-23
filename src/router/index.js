@@ -4,7 +4,6 @@ import { connect, useSelector } from 'react-redux'
 import Login from '@v/login'
 import Layout from '@v/layout'
 import routeList from '@/config/routeMap.js'
-console.log('routeList', routeList)
 
 function RenderElement (props) {
   const { token } = useSelector(state => state.user)

@@ -1,6 +1,7 @@
 import Loadable from 'react-loadable'
 import Loading from '@c/Loading'
 import Dashboard from '@v/dashboard'
+import Doc from '@v/doc'
 import About from '@v/about'
 import Bug from '@v/bug'
 
@@ -131,7 +132,7 @@ const routeMap = [
     component: <About />,
     roles: ['admin', 'editor', 'guest']
   },
-  // { path: '/doc', component: Doc, roles: ['admin', 'editor', 'guest'] },
+  { path: '/doc', component: <Doc />, roles: ['admin', 'editor', 'guest'] },
   // { path: '/guide', component: Guide, roles: ['admin', 'editor'] },
   // { path: '/permission/explanation', component: Explanation, roles: ['admin'] },
   // { path: '/permission/adminPage', component: AdminPage, roles: ['admin'] },
