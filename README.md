@@ -8,3 +8,4 @@
 2. react-app-rewired 来写 webpack 相关配置
 3. react-countup 实现数数的一个动态的效果
 4. react-transition-group 实现动画效果
+5. clipboard 实现复制功能

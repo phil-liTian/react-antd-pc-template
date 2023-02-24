@@ -9,8 +9,10 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.2.1",
     "axios": "^1.3.3",
+    "clipboard": "^2.0.11",
     "css-loader": "^6.7.3",
     "customize-cra": "^0.9.1",
+    "echarts": "^5.4.1",
     "fullscreen": "^1.1.1",
     "js-cookie": "^3.0.1",
     "mockjs": "^1.1.0",
@@ -30,6 +32,7 @@
     "sass": "^1.58.2",
     "screenfull": "^6.0.2",
     "style-loader": "^3.3.1",
+    "user-agent": "^1.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

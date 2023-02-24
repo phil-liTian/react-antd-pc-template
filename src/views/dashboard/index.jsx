@@ -6,7 +6,7 @@ const DashBoard = () => {
   return (
     <div>
       <PanelGroup />
-      {/* <LineChart /> */}
+      <LineChart />
     </div>
   )
 }
