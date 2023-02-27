@@ -17,3 +17,13 @@ export const getMenuItemFromMenuListByProperty = (menuList, key, value) => {
 
   return res
 }
+
+// 防抖
+export function debounce (func, wait, immediate) {
+  let result, context, timeStamp
+  return function (...args) {
+    context = this
+    timeStamp = +new Date()
+    console.log('args', args)
+  }
+}

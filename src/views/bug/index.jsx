@@ -8,13 +8,30 @@ const { Column } = Table
 const Bug = props => {
   const { bugList } = props
   const bugContent = `此页面用于展示埋点收集到的异常信息。本系统将异常分成两大类: js异常和资源加载异常`
+  const onJsError = () => {
+    const a = {}
+    console.log(a.b.c)
+  }
+
+  const loadResourceError = () => {
+    const img = document.createElement('img')
+    img.src = '/src/assets/error.jpg'
+    let parent = document.querySelector('.app-container')
+    parent.appendChild(img)
+  }
   return (
     <div className='app-container'>
       <TypingCard title='埋点bug收集' source={bugContent}></TypingCard>
       <Collapse defaultActiveKey={['1']}>
         <Panel header='报错' key='1'>
-          <Button type='primary'>JsError</Button>
-          <Button style={{ marginLeft: '20px' }} type='primary'>
+          <Button type='primary' onClick={onJsError}>
+            JsError
+          </Button>
+          <Button
+            style={{ marginLeft: '20px' }}
+            type='primary'
+            onClick={loadResourceError}
+          >
             资源加载异常
           </Button>
         </Panel>
@@ -49,7 +66,12 @@ const Bug = props => {
           dataIndex='stack'
           key='stack'
         ></Column>
-        <Column title='操作元素' dataIndex='selector' key='selector'></Column>
+        <Column
+          title='操作元素'
+          dataIndex='selector'
+          ellipsis
+          key='selector'
+        ></Column>
         <Column
           title='userAgent'
           dataIndex='userAgent'
