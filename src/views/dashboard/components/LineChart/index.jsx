@@ -86,8 +86,29 @@ class LineChart extends Component {
     })
   }
 
+  resize () {
+    const { chart } = this.state
+    if (chart) {
+      debounce(chart.resize.bind(this), 300)()
+    }
+  }
+
+  // 移除chart 和resize事件
+  dispose () {
+    const { chart } = this.state
+    if (!chart) return
+    window.removeEventListener('resize', () => this.resize())
+    this.setState({ chart: null })
+  }
+
   componentDidMount () {
-    debounce(this.initChart.bind(this))()
+    debounce(this.initChart.bind(this), 300)()
+    // windom尺寸发生改变时 chart尺寸同步发生改变
+    window.addEventListener('resize', () => this.resize())
+  }
+
+  componentWillUnmount () {
+    this.dispose()
   }
 
   render () {
