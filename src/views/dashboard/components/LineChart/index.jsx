@@ -111,6 +111,13 @@ class LineChart extends Component {
     this.dispose()
   }
 
+  componentDidUpdate () {
+    console.log('props', this.props)
+    // debounce(this.initChart.bind(this), 300)()
+    // const { chart } = this.state
+    // debounce(this.initChart.bind(this), 300)
+  }
+
   render () {
     const { style } = this.props
     return (

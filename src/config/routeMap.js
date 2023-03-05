@@ -4,6 +4,7 @@ import Dashboard from '@v/dashboard'
 import Doc from '@v/doc'
 import About from '@v/about'
 import Bug from '@v/bug'
+import Zip from '@v/zip'
 import ClipBoard from '@v/clipboard'
 
 // const Dashboard = import(/*webpackChunkName:'Dashboard'*/ '@v/dashboard')
@@ -178,7 +179,7 @@ const routeMap = [
   // { path: '/table', component: Table, roles: ['admin', 'editor'] },
   // { path: '/excel/export', component: ExportExcel, roles: ['admin', 'editor'] },
   // { path: '/excel/upload', component: UploadExcel, roles: ['admin', 'editor'] },
-  // { path: '/zip', component: Zip, roles: ['admin', 'editor'] },
+  { path: '/zip', component: <Zip />, roles: ['admin', 'editor'] },
   { path: '/clipboard', component: <ClipBoard />, roles: ['admin', 'editor'] },
   // { path: '/user', component: User, roles: ['admin'] },
   // { path: '/about', component: About, roles: ['admin', 'editor', 'guest'] },

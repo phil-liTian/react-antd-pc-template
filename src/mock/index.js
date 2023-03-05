@@ -1,5 +1,6 @@
 import Mock from 'mockjs'
 import LoginApi from './login'
+import { excelList } from './excel'
 import { minitor } from './minitor'
 // 模拟接口请求
 
@@ -7,3 +8,6 @@ import { minitor } from './minitor'
 Mock.mock(/\/login/, 'post', LoginApi.login)
 Mock.mock(/\/userInfo/, 'post', LoginApi.userInfo)
 Mock.mock(/\/minitor/, 'post', minitor)
+
+// 获取excel数据
+Mock.mock(/\/excel\/list/, 'get', excelList)

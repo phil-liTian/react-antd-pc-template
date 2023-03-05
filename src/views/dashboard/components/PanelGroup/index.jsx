@@ -34,12 +34,20 @@ const chartList = [
   }
 ]
 
-const PanelGroup = () => {
+const PanelGroup = props => {
+  const { handleSetLineChartData } = props
   return (
     <div className='panel-group-container'>
       <Row className='panel-group' gutter={30}>
         {chartList.map((chart, i) => (
-          <Col key={i} className='card-panel-col' lg={6} sm={12} xs={12}>
+          <Col
+            key={i}
+            className='card-panel-col'
+            onClick={() => handleSetLineChartData(chart.type)}
+            lg={6}
+            sm={12}
+            xs={12}
+          >
             <div className='card-panel'>
               <div className='card-panel-icon-wrapper'>{chart.icon}</div>
               <div className='card-panel-description'>

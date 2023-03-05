@@ -2,3 +2,4 @@
 export { reqLogin } from './login'
 export { reqUserInfo } from './user'
 export { tracker } from './minitor'
+export { getExcelList } from './excel'

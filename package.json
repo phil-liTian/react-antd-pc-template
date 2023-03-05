@@ -13,8 +13,10 @@
     "css-loader": "^6.7.3",
     "customize-cra": "^0.9.1",
     "echarts": "^5.4.1",
+    "file-saver": "^2.0.5",
     "fullscreen": "^1.1.1",
     "js-cookie": "^3.0.1",
+    "jszip": "^3.10.1",
     "mockjs": "^1.1.0",
     "postcss-loader": "^7.0.2",
     "react": "^18.2.0",
@@ -31,6 +33,7 @@
     "redux-thunk": "^2.4.2",
     "sass": "^1.58.2",
     "screenfull": "^6.0.2",
+    "script-loader": "^0.7.2",
     "style-loader": "^3.3.1",
     "user-agent": "^1.0.4",
     "web-vitals": "^2.1.4"
