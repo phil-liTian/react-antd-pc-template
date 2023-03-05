@@ -31,7 +31,7 @@ const FullScreen = () => {
 
   return (
     <div className='fullScreen-container'>
-      <Tooltip placement='bottom'>
+      <Tooltip placement='bottom' title={isFullScreen ? '取消全屏' : '全屏'}>
         <div onClick={handleToggle}>
           {isFullScreen ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
         </div>

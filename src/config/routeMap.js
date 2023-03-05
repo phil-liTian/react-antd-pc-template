@@ -8,6 +8,11 @@ import Zip from '@v/zip'
 import ClipBoard from '@v/clipboard'
 import ExportExcel from '@v/excel/exportExcel'
 import UploadExcel from '@v/excel/uploadExcel'
+import Guide from '@v/guide'
+import Explanation from '@v/permission/explanation'
+import AdminPage from '@v/permission/adminPage'
+import EditorPage from '@v/permission/editorPage'
+import GuestPage from '@v/permission/guestPage'
 
 // const Dashboard = import(/*webpackChunkName:'Dashboard'*/ '@v/dashboard')
 // Loadable({
@@ -137,11 +142,19 @@ const routeMap = [
     roles: ['admin', 'editor', 'guest']
   },
   { path: '/doc', component: <Doc />, roles: ['admin', 'editor', 'guest'] },
-  // { path: '/guide', component: Guide, roles: ['admin', 'editor'] },
-  // { path: '/permission/explanation', component: Explanation, roles: ['admin'] },
-  // { path: '/permission/adminPage', component: AdminPage, roles: ['admin'] },
-  // { path: '/permission/guestPage', component: GuestPage, roles: ['guest'] },
-  // { path: '/permission/editorPage', component: EditorPage, roles: ['editor'] },
+  { path: '/guide', component: <Guide />, roles: ['admin', 'editor'] },
+  {
+    path: '/permission/explanation',
+    component: <Explanation />,
+    roles: ['admin']
+  },
+  { path: '/permission/adminPage', component: <AdminPage />, roles: ['admin'] },
+  { path: '/permission/guestPage', component: <GuestPage />, roles: ['guest'] },
+  {
+    path: '/permission/editorPage',
+    component: <EditorPage />,
+    roles: ['editor']
+  },
   // {
   //   path: '/components/richTextEditor',
   //   component: RichTextEditor,

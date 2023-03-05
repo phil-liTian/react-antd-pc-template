@@ -5,3 +5,9 @@ export const toggleSiderBar = () => {
     type: types.APP_TOGGLE_SIDEBAR
   }
 }
+
+export const toggleRightPanel = () => {
+  return {
+    type: types.APP_TOGGLE_SETTINGPANEL
+  }
+}

@@ -17,6 +17,12 @@ const app = (state = initAppState, action) => {
         ...state,
         sidebarCollapsed: !state.sidebarCollapsed
       }
+
+    case types.APP_TOGGLE_SETTINGPANEL:
+      return {
+        ...state,
+        settingPanelVisible: !state.settingPanelVisible
+      }
     default: {
       return newState
     }
