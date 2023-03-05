@@ -6,6 +6,8 @@ import About from '@v/about'
 import Bug from '@v/bug'
 import Zip from '@v/zip'
 import ClipBoard from '@v/clipboard'
+import ExportExcel from '@v/excel/exportExcel'
+import UploadExcel from '@v/excel/uploadExcel'
 
 // const Dashboard = import(/*webpackChunkName:'Dashboard'*/ '@v/dashboard')
 // Loadable({
@@ -177,8 +179,16 @@ const routeMap = [
   //   roles: ['admin', 'editor']
   // },
   // { path: '/table', component: Table, roles: ['admin', 'editor'] },
-  // { path: '/excel/export', component: ExportExcel, roles: ['admin', 'editor'] },
-  // { path: '/excel/upload', component: UploadExcel, roles: ['admin', 'editor'] },
+  {
+    path: '/excel/export',
+    component: <ExportExcel />,
+    roles: ['admin', 'editor']
+  },
+  {
+    path: '/excel/upload',
+    component: <UploadExcel />,
+    roles: ['admin', 'editor']
+  },
   { path: '/zip', component: <Zip />, roles: ['admin', 'editor'] },
   { path: '/clipboard', component: <ClipBoard />, roles: ['admin', 'editor'] },
   // { path: '/user', component: User, roles: ['admin'] },
