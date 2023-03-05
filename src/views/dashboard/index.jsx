@@ -14,7 +14,6 @@ const DashBoard = () => {
   const handleSetLineChartData = type => {
     // console.log('type', type)
     // TODO: 如何实现数据更新
-    console.log('lineChartDefaultData[type]', lineChartDefaultData[type])
     setLineChartData(lineChartDefaultData[type])
   }
   return (
