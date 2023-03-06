@@ -13,6 +13,7 @@ import Explanation from '@v/permission/explanation'
 import AdminPage from '@v/permission/adminPage'
 import EditorPage from '@v/permission/editorPage'
 import GuestPage from '@v/permission/guestPage'
+import Table from '@v/table'
 
 // const Dashboard = import(/*webpackChunkName:'Dashboard'*/ '@v/dashboard')
 // Loadable({
@@ -191,7 +192,7 @@ const routeMap = [
   //   component: Menu1_2_1,
   //   roles: ['admin', 'editor']
   // },
-  // { path: '/table', component: Table, roles: ['admin', 'editor'] },
+  { path: '/table', component: <Table />, roles: ['admin', 'editor'] },
   {
     path: '/excel/export',
     component: <ExportExcel />,
