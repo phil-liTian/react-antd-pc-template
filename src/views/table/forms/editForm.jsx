@@ -36,10 +36,13 @@ class EditForm extends Component {
             <Rate />
           </Form.Item>
           <Form.Item label='状态：' name='status'>
-            <Select placeholder='请选择状态'></Select>
+            <Select placeholder='请选择状态'>
+              <Select.Option value='published'>published</Select.Option>
+              <Select.Option value='draft'>draft</Select.Option>
+            </Select>
           </Form.Item>
           <Form.Item label='时间：' name='date'>
-            <DatePicker />
+            <DatePicker showTime />
           </Form.Item>
         </Form>
       </Modal>

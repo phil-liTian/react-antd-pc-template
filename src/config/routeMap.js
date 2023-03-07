@@ -14,6 +14,8 @@ import AdminPage from '@v/permission/adminPage'
 import EditorPage from '@v/permission/editorPage'
 import GuestPage from '@v/permission/guestPage'
 import Table from '@v/table'
+import Menu1_1 from '@v/nested/Menu1_1'
+import Menu1_2_1 from '@v/nested/menu1/menu1-2/menu1-2-1'
 
 // const Dashboard = import(/*webpackChunkName:'Dashboard'*/ '@v/dashboard')
 // Loadable({
@@ -80,40 +82,6 @@ import Table from '@v/table'
 //     import(/*webpackChunkName:'MixChart'*/ '@/views/charts/mixChart'),
 //   loading: Loading
 // })
-// const Menu1_1 = Loadable({
-//   loader: () =>
-//     import(/*webpackChunkName:'Menu1_1'*/ '@/views/nested/menu1/menu1-1'),
-//   loading: Loading
-// })
-// const Menu1_2_1 = Loadable({
-//   loader: () =>
-//     import(
-//       /*webpackChunkName:'Menu1_2_1'*/ '@/views/nested/menu1/menu1-2/menu1-2-1'
-//     ),
-//   loading: Loading
-// })
-// const Table = Loadable({
-//   loader: () => import(/*webpackChunkName:'Table'*/ '@/views/table'),
-//   loading: Loading
-// })
-// const ExportExcel = Loadable({
-//   loader: () =>
-//     import(/*webpackChunkName:'ExportExcel'*/ '@/views/excel/exportExcel'),
-//   loading: Loading
-// })
-// const UploadExcel = Loadable({
-//   loader: () =>
-//     import(/*webpackChunkName:'UploadExcel'*/ '@/views/excel/uploadExcel'),
-//   loading: Loading
-// })
-// const Zip = Loadable({
-//   loader: () => import(/*webpackChunkName:'Zip'*/ '@/views/zip'),
-//   loading: Loading
-// })
-// const Clipboard = Loadable({
-//   loader: () => import(/*webpackChunkName:'Clipboard'*/ '@/views/clipboard'),
-//   loading: Loading
-// })
 // const Error404 = Loadable({
 //   loader: () => import(/*webpackChunkName:'Error404'*/ '@/views/error/404'),
 //   loading: Loading
@@ -135,26 +103,26 @@ const routeMap = [
   {
     path: '/dashboard',
     component: <Dashboard />,
-    roles: ['admin', 'editor', 'guest']
+    roles: ['admin', 'editor', 'guest'],
   },
   {
     path: '/about',
     component: <About />,
-    roles: ['admin', 'editor', 'guest']
+    roles: ['admin', 'editor', 'guest'],
   },
   { path: '/doc', component: <Doc />, roles: ['admin', 'editor', 'guest'] },
   { path: '/guide', component: <Guide />, roles: ['admin', 'editor'] },
   {
     path: '/permission/explanation',
     component: <Explanation />,
-    roles: ['admin']
+    roles: ['admin'],
   },
   { path: '/permission/adminPage', component: <AdminPage />, roles: ['admin'] },
   { path: '/permission/guestPage', component: <GuestPage />, roles: ['guest'] },
   {
     path: '/permission/editorPage',
     component: <EditorPage />,
-    roles: ['editor']
+    roles: ['editor'],
   },
   // {
   //   path: '/components/richTextEditor',
@@ -182,32 +150,32 @@ const routeMap = [
   //   component: MixChart,
   //   roles: ['admin', 'editor']
   // },
-  // {
-  //   path: '/nested/menu1/menu1-1',
-  //   component: Menu1_1,
-  //   roles: ['admin', 'editor']
-  // },
-  // {
-  //   path: '/nested/menu1/menu1-2/menu1-2-1',
-  //   component: Menu1_2_1,
-  //   roles: ['admin', 'editor']
-  // },
+  {
+    path: '/nested/menu1/menu1-1',
+    component: <Menu1_1 />,
+    roles: ['admin', 'editor'],
+  },
+  {
+    path: '/nested/menu1/menu1-2/menu1-2-1',
+    component: <Menu1_2_1 />,
+    roles: ['admin', 'editor'],
+  },
   { path: '/table', component: <Table />, roles: ['admin', 'editor'] },
   {
     path: '/excel/export',
     component: <ExportExcel />,
-    roles: ['admin', 'editor']
+    roles: ['admin', 'editor'],
   },
   {
     path: '/excel/upload',
     component: <UploadExcel />,
-    roles: ['admin', 'editor']
+    roles: ['admin', 'editor'],
   },
   { path: '/zip', component: <Zip />, roles: ['admin', 'editor'] },
   { path: '/clipboard', component: <ClipBoard />, roles: ['admin', 'editor'] },
   // { path: '/user', component: User, roles: ['admin'] },
   // { path: '/about', component: About, roles: ['admin', 'editor', 'guest'] },
-  { path: '/bug', component: <Bug />, roles: ['admin'] }
+  { path: '/bug', component: <Bug />, roles: ['admin'] },
   // { path: '/error/404', component: Error404 }
 ]
 
