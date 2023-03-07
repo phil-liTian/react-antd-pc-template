@@ -38,21 +38,22 @@ const BreadCrumb = () => {
   let path = getPath(pathname, menuList)
   const first = path && path[0]
   if (first && first.label.trim() !== '首页') {
-    path = [{ label: '首页', key: '/dashboard' }].concat(first)
+    path = [{ label: '首页', key: '/dashboard' }].concat(path)
   }
 
   return (
     <div className='Breadcrumb-container'>
       <Breadcrumb>
-        {path.map(item =>
-          item.label === '首页' ? (
-            <Breadcrumb.Item key={item.key}>
-              <a href={`#${item.key}`}>{item.label}</a>
-            </Breadcrumb.Item>
-          ) : (
-            <Breadcrumb.Item key={item.key}>{item.label}</Breadcrumb.Item>
-          )
-        )}
+        {path &&
+          path.map((item) =>
+            item.label === '首页' ? (
+              <Breadcrumb.Item key={item.key}>
+                <a href={`#${item.key}`}>{item.label}</a>
+              </Breadcrumb.Item>
+            ) : (
+              <Breadcrumb.Item key={item.key}>{item.label}</Breadcrumb.Item>
+            )
+          )}
       </Breadcrumb>
     </div>
   )

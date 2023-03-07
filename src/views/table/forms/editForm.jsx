@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import { Modal, Form, Input, Rate, Select, DatePicker } from 'antd'
 
 class EditForm extends Component {
-  handleFinish = values => {
+  handleFinish = (values) => {
     console.log('values', values)
   }
 
   render () {
-    const { visible, onCancel } = this.props
+    const { visible, onCancel, currentRowData } = this.props
+    console.log('currentRowData', currentRowData)
     const formItemLayout = {
       labelCol: {
         sm: { span: 4 }

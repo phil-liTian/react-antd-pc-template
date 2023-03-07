@@ -27,6 +27,7 @@ class TableComponent extends Component {
     loading: false,
     // 编辑框
     editFormVisible: false,
+    currentRowData: {}, // 当前编辑的对象
     queryData: {
       pageSize: 10,
       page: 1,
@@ -36,10 +37,11 @@ class TableComponent extends Component {
     }
   }
 
-  handleEdit = row => {
+  handleEdit = (row) => {
     console.log('row', row)
     this.setState({
-      editFormVisible: true
+      editFormVisible: true,
+      currentRowData: row
     })
   }
 
@@ -52,6 +54,22 @@ class TableComponent extends Component {
     this.setState({
       editFormVisible: false
     })
+  }
+
+  handleChangePage = (page, pageSize) => {
+    let { queryData } = this.state
+    queryData.page = page
+    queryData.pageSize = pageSize
+    this.setState({ queryData }, () => this.fetchData())
+  }
+
+  onFinish = (params) => {
+    const { queryData } = this.state
+    for (const key in params) {
+      const value = params[key]
+      queryData[key] = value
+    }
+    this.setState({ queryData }, () => this.fetchData())
   }
 
   // 获取表格数据
@@ -69,20 +87,28 @@ class TableComponent extends Component {
   }
 
   render () {
-    const { dataList, loading, editFormVisible, total } = this.state
+    const { dataList, loading, editFormVisible, total, currentRowData } =
+      this.state
     return (
       <div className='app-container'>
         <Collapse defaultActiveKey={['1']}>
           <Panel header='筛选' key='1'>
-            <Form layout='inline'>
-              <Form.Item label='标题'>
+            <Form layout='inline' onFinish={this.onFinish}>
+              <Form.Item label='标题' name='title'>
                 <Input />
               </Form.Item>
-              <Form.Item label='类型'>
-                <Select style={{ width: '120px' }} />
+              <Form.Item label='类型' name='status'>
+                <Select style={{ width: '120px' }}>
+                  <Select.Option value='draft'>draft</Select.Option>
+                  <Select.Option value='published'>published</Select.Option>
+                </Select>
               </Form.Item>
-              <Form.Item label='推荐指数'>
-                <Select style={{ width: '120px' }} />
+              <Form.Item label='推荐指数' name='star'>
+                <Select style={{ width: '120px' }}>
+                  <Select.Option value={1}>★</Select.Option>
+                  <Select.Option value={2}>★★</Select.Option>
+                  <Select.Option value={3}>★★★</Select.Option>
+                </Select>
               </Form.Item>
               <Form.Item>
                 <Button type='primary' htmlType='submit'>
@@ -101,7 +127,7 @@ class TableComponent extends Component {
           loading={loading}
           dataSource={dataList}
           pagination={false}
-          rowKey={record => record.id}
+          rowKey={(record) => record.id}
         >
           <Column
             dataIndex='id'
@@ -144,7 +170,7 @@ class TableComponent extends Component {
             key='status'
             title='状态'
             width={200}
-            render={status => {
+            render={(status) => {
               let color =
                 {
                   published: 'green',
@@ -185,14 +211,19 @@ class TableComponent extends Component {
         <Pagination
           total={total}
           pageSizeOptions={[10, 20, 40]}
-          showTotal={total => `共${total}条数据`}
+          showTotal={(total) => `共${total}条数据`}
           showSizeChanger
           showQuickJumper
           hideOnSinglePage={true}
+          onChange={this.handleChangePage}
         />
 
         {/* 修改表格信息 */}
-        <EditForm visible={editFormVisible} onCancel={this.handleCancel} />
+        <EditForm
+          currentRowData={currentRowData}
+          visible={editFormVisible}
+          onCancel={this.handleCancel}
+        />
       </div>
     )
   }
