@@ -12,7 +12,7 @@ import {
 } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
-import { getTableList } from '@/service'
+import { getTableList, updateItem, deleteItem } from '@/service'
 import EditForm from './forms/editForm'
 const { Column } = Table
 const { Panel } = Collapse
