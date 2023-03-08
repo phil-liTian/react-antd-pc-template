@@ -1,5 +1,6 @@
 import React from 'react'
-import { Layout, Dropdown, Avatar } from 'antd'
+import { Layout, Dropdown, Avatar, Menu } from 'antd'
+import { Link } from 'react-router-dom'
 import Hamburger from '@c/Hamburger'
 import BreadCrumb from '@c/BreadCrumb'
 import FullScreen from '@c/FullScreen'
@@ -8,6 +9,14 @@ import { CaretDownOutlined } from '@ant-design/icons'
 import './index.scss'
 import { connect } from 'react-redux'
 const { Header } = Layout
+
+const onClickMenu = () => {}
+
+const menu =<Menu onClick={onClickMenu}>
+  <Menu.Item><Link>首页</Link></Menu.Item>
+  <Menu.Item>项目地址</Menu.Item>
+  <Menu.Item>注销</Menu.Item>
+</Menu>
 
 const LayoutHeader = props => {
   return (
@@ -21,7 +30,7 @@ const LayoutHeader = props => {
         {/* 设置 */}
         <Settings />
         <div className='dropdown-wrap'>
-          <Dropdown trigger='click'>
+          <Dropdown trigger='click' overlay={menu}>
             <div>
               <Avatar />
               <CaretDownOutlined />
