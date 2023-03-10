@@ -9,7 +9,7 @@ import { getMenuItemFromMenuListByProperty } from '@u/index'
 import './index.scss'
 
 const { Content } = Layout
-const LayoutContent = props => {
+const LayoutContent = (props) => {
   const { pathname } = useLocation()
 
   const getPageTitle = () => {
@@ -23,7 +23,8 @@ const LayoutContent = props => {
 
   const contentStyle = {
     height: 'calc(100% - 100px)',
-    padding: '24px'
+    padding: '24px',
+    overflowY: 'auto'
   }
 
   return (

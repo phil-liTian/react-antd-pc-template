@@ -8,8 +8,10 @@ import {
   Collapse,
   Form,
   Input,
-  Select
+  Select,
+  message
 } from 'antd'
+import dayjs from 'dayjs'
 import { SearchOutlined } from '@ant-design/icons'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
 import { getTableList, updateItem, deleteItem } from '@/service'
@@ -41,8 +43,23 @@ class TableComponent extends Component {
     console.log('row', row)
     this.setState({
       editFormVisible: true,
-      currentRowData: row
+      currentRowData: {
+        ...row,
+        star: row.star?.length,
+        date: dayjs(row.date)
+      }
     })
+  }
+
+  handleRemove = async (row) => {
+    const res = await deleteItem({ id: row.id })
+    this.fetchData()
+    message.success('删除成功')
+  }
+
+  handleOk = () => {
+    this.onCloseEdit()
+    this.fetchData()
   }
 
   handleCancel = () => {
@@ -197,6 +214,7 @@ class TableComponent extends Component {
                 ></Button>
                 <Divider type='vertical' />
                 <Button
+                  onClick={this.handleRemove.bind(null, row)}
                   shape='circle'
                   icon={<DeleteOutlined />}
                   type='primary'
@@ -223,6 +241,7 @@ class TableComponent extends Component {
           currentRowData={currentRowData}
           visible={editFormVisible}
           onCancel={this.handleCancel}
+          onOk={this.handleOk}
         />
       </div>
     )

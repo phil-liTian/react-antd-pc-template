@@ -12,7 +12,7 @@ for (let i = 0; i < count; i++) {
       readings: '@integer(300, 5000)',
       date: '@date(yyyy-MM-dd)',
       'status|1': ['published', 'draft'],
-      'star|1-3': '★',
+      'star|1-3': '★'
     })
   )
 }
@@ -24,7 +24,7 @@ export const getTableList = (config) => {
     pageSize = 10,
     title,
     status,
-    star,
+    star
   } = JSON.parse(config.body)
   // 开始的下标
   let start = (page - 1) * pageSize
@@ -46,8 +46,8 @@ export const getTableList = (config) => {
     code: 200,
     data: {
       list: pageList,
-      total: _mockList.length,
-    },
+      total: _mockList.length
+    }
   }
 }
 
@@ -57,7 +57,7 @@ export const deleteItem = (config) => {
   const idx = list.findIndex((item) => item.id === id)
   list.splice(idx, 1)
   return {
-    code: 200,
+    code: 200
   }
 }
 

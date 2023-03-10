@@ -12,13 +12,17 @@ const { Header } = Layout
 
 const onClickMenu = () => {}
 
-const menu =<Menu onClick={onClickMenu}>
-  <Menu.Item><Link>首页</Link></Menu.Item>
-  <Menu.Item>项目地址</Menu.Item>
-  <Menu.Item>注销</Menu.Item>
-</Menu>
+const menu = (
+  <Menu onClick={onClickMenu}>
+    <Menu.Item>
+      <Link>首页</Link>
+    </Menu.Item>
+    <Menu.Item>项目地址</Menu.Item>
+    <Menu.Item>注销</Menu.Item>
+  </Menu>
+)
 
-const LayoutHeader = props => {
+const LayoutHeader = (props) => {
   return (
     <Header>
       <Hamburger />
@@ -30,7 +34,7 @@ const LayoutHeader = props => {
         {/* 设置 */}
         <Settings />
         <div className='dropdown-wrap'>
-          <Dropdown trigger='click' overlay={menu}>
+          <Dropdown trigger='click' menu={menu}>
             <div>
               <Avatar />
               <CaretDownOutlined />
@@ -42,7 +46,7 @@ const LayoutHeader = props => {
   )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     ...state.user
   }
