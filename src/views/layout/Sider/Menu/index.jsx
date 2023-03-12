@@ -23,7 +23,8 @@ function SideMenu (props) {
   useEffect(() => {
     const matchedItem = menuList.find((item) => item.key === '/dashboard')
     addTag({ ...matchedItem, label: '首页' })
-  }, [])
+    setSelectedKeys([pathname])
+  })
 
   return (
     <div className='sidebar-menu-container'>

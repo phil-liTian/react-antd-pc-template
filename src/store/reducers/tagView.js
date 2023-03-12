@@ -29,6 +29,23 @@ export default function tagsView (state = initState, action) {
       }
     }
 
+    case types.TAGSVIEW_CLOSE_OTHER_TAGS: {
+      console.log('action', action)
+      return {
+        ...state,
+        tagList: state.tagList.filter(
+          (item) => item.key === action.tag.key || item.key === '/dashboard'
+        )
+      }
+    }
+
+    case types.TAGSVIEW_EMPTY_TAGLIST: {
+      return {
+        ...state,
+        tagList: state.tagList.filter((item) => item.key === '/dashboard')
+      }
+    }
+
     default:
       return state
   }

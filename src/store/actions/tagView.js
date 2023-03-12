@@ -15,3 +15,19 @@ export const removeTag = (tag) => {
     tag
   }
 }
+
+// 移除其它标签
+export const removeOtherTags = (tag) => {
+  return {
+    type: types.TAGSVIEW_CLOSE_OTHER_TAGS,
+    tag
+  }
+}
+
+// 移除所有标签
+export const clearTags = (tag) => {
+  return {
+    type: types.TAGSVIEW_EMPTY_TAGLIST,
+    tag
+  }
+}
