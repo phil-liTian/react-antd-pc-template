@@ -18,12 +18,14 @@ export default function user (state = initUserInfo, action) {
       }
 
     case types.USER_SET_USER_INFO:
-      console.log('action', action)
       return {
         ...state,
         ...action
       }
 
+    case types.USER_RESET_USER: {
+      return {}
+    }
     default:
       return newState
   }

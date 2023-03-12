@@ -8,3 +8,11 @@ export function reqLogin (data) {
     data
   })
 }
+
+export function reqLayout (data) {
+  return request({
+    url: '/layout',
+    method: 'post',
+    data
+  })
+}

@@ -7,7 +7,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import { login, getUserInfo } from '@s/actions'
 import './index.scss'
 
-const Login = props => {
+const Login = (props) => {
   const { login, token, getUserInfo } = props
   // 使用useForm可以使用form上的方法
   const [loading, setLoading] = useState(false)
@@ -15,18 +15,20 @@ const Login = props => {
   const handleFinish = ({ userName }) => {
     setLoading(true)
     login(userName)
-      .then(res => {
+      .then((res) => {
         message.success('登录成功')
         getUserInfo(res.token)
       })
-      .catch(err => {
+      .catch((err) => {
         setLoading(false)
         message.error('用户名或者密码错误')
       })
   }
 
+  console.log('token', token)
+
   if (token) {
-    return <Navigate to='/about'></Navigate>
+    return <Navigate to='/dashboard'></Navigate>
   }
 
   return (
@@ -77,4 +79,4 @@ const Login = props => {
   )
 }
 
-export default connect(state => state.user, { login, getUserInfo })(Login)
+export default connect((state) => state.user, { login, getUserInfo })(Login)

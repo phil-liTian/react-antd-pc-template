@@ -7,6 +7,7 @@ import { getTableList, deleteItem, updateItem } from './table'
 
 // mock登录及用户相关的接口信息
 Mock.mock(/\/login/, 'post', LoginApi.login)
+Mock.mock(/\/layout/, 'post', LoginApi.layout)
 Mock.mock(/\/userInfo/, 'post', LoginApi.userInfo)
 Mock.mock(/\/minitor/, 'post', minitor)
 

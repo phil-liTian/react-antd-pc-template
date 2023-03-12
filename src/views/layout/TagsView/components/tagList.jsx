@@ -9,7 +9,7 @@ const TagList = (props) => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const [currentTag, setCurrentTag] = useState(tagList[0])
-  const [menuVisible, setMenuVisible] = useState(true)
+  const [menuVisible, setMenuVisible] = useState(false)
   const [left, setLeft] = useState(0)
   const [top, setTop] = useState(0)
   const tagListContainer = useRef()

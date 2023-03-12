@@ -1,28 +1,63 @@
 import React from 'react'
-import { Layout, Dropdown, Avatar, Menu } from 'antd'
-import { Link } from 'react-router-dom'
+import { Layout, Dropdown, Avatar, Menu, Modal } from 'antd'
+import { CaretDownOutlined } from '@ant-design/icons'
+import { Link, useNavigate } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Hamburger from '@c/Hamburger'
 import BreadCrumb from '@c/BreadCrumb'
 import FullScreen from '@c/FullScreen'
 import Settings from '@c/Settings'
-import { CaretDownOutlined } from '@ant-design/icons'
 import './index.scss'
-import { connect } from 'react-redux'
+import { logout } from '@s/actions'
 const { Header } = Layout
 
-const onClickMenu = () => {}
-
-const menu = (
-  <Menu onClick={onClickMenu}>
-    <Menu.Item>
-      <Link>首页</Link>
-    </Menu.Item>
-    <Menu.Item>项目地址</Menu.Item>
-    <Menu.Item>注销</Menu.Item>
-  </Menu>
-)
-
 const LayoutHeader = (props) => {
+  const { avatar, logout, token } = props
+  const navigate = useNavigate()
+
+  // 注销
+  const onLayout = () => {
+    Modal.confirm({
+      title: '注销',
+      content: '确认退出当前系统吗？',
+      okText: '确认',
+      cancelText: '取消',
+      onOk () {
+        logout(token).then(() => {
+          navigate('/login')
+        })
+      }
+    })
+  }
+
+  const items = [
+    {
+      key: 1,
+      label: (
+        <div>
+          <Link style={{ color: '#000' }} to='/dashboard'>
+            首页
+          </Link>
+        </div>
+      )
+    },
+    {
+      key: 2,
+      label: (
+        <div>
+          <a
+            style={{ color: '#000' }}
+            target='_blank'
+            href='https://github.com/phil-liTian/react-antd-pc-template'
+          >
+            项目地址
+          </a>
+        </div>
+      )
+    },
+    { key: 3, label: <div onClick={onLayout}>注销</div> }
+  ]
+
   return (
     <Header>
       <Hamburger />
@@ -34,9 +69,9 @@ const LayoutHeader = (props) => {
         {/* 设置 */}
         <Settings />
         <div className='dropdown-wrap'>
-          <Dropdown trigger='click' menu={menu}>
+          <Dropdown menu={{ items }}>
             <div>
-              <Avatar />
+              <Avatar src={avatar} />
               <CaretDownOutlined />
             </div>
           </Dropdown>
@@ -48,8 +83,9 @@ const LayoutHeader = (props) => {
 
 const mapStateToProps = (state) => {
   return {
+    ...state.app,
     ...state.user
   }
 }
 
-export default connect(mapStateToProps)(LayoutHeader)
+export default connect(mapStateToProps, { logout })(LayoutHeader)

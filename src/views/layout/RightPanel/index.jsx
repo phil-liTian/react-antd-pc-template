@@ -4,7 +4,7 @@ import { Drawer, Row, Col, Button, Switch, Divider } from 'antd'
 import { CopyOutlined } from '@ant-design/icons'
 import { changeSetting, toggleRightPanel } from '@s/actions'
 
-const RightPanel = props => {
+const RightPanel = (props) => {
   const {
     sidebarLogo: defaultSidebarLogo,
     tagsView: defaultTagView,
@@ -17,12 +17,12 @@ const RightPanel = props => {
   const [tagView, setTagView] = useState(defaultTagView)
 
   // 设置logo是否展示
-  const sidebarLogoChange = checked => {
+  const sidebarLogoChange = (checked) => {
     setSidebarLogo(checked)
     changeSetting({ key: 'sidebarLogo', value: checked })
   }
 
-  const tagViewChange = checked => {
+  const tagViewChange = (checked) => {
     setTagView(checked)
     changeSetting({ key: 'tagsView', value: checked })
   }
@@ -72,16 +72,16 @@ const RightPanel = props => {
           </Col>
         </Row>
         <Divider dashed />
-        <Button style={{ width: '100%' }}>
+        {/* <Button style={{ width: '100%' }}>
           <CopyOutlined />
           拷贝设置
-        </Button>
+        </Button> */}
       </Drawer>
     </div>
   )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     ...state.app,
     ...state.setting
