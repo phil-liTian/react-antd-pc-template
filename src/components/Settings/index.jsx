@@ -5,7 +5,7 @@ import { SettingOutlined } from '@ant-design/icons'
 import { toggleRightPanel } from '@s/actions'
 import './index.scss'
 
-const Settings = props => {
+const Settings = (props) => {
   const { toggleRightPanel } = props
   return (
     <div className='settings-container' onClick={toggleRightPanel}>

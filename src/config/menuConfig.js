@@ -75,17 +75,17 @@ const menuList = [
         label: '富文本',
         key: '/components/richTextEditor',
         roles: ['admin', 'editor']
-      },
-      {
-        label: 'Markdown',
-        key: '/components/Markdown',
-        roles: ['admin', 'editor']
-      },
-      {
-        label: '拖拽列表',
-        key: '/components/draggable',
-        roles: ['admin', 'editor']
       }
+      // {
+      //   label: 'Markdown',
+      //   key: '/components/Markdown',
+      //   roles: ['admin', 'editor']
+      // },
+      // {
+      //   label: '拖拽列表',
+      //   key: '/components/draggable',
+      //   roles: ['admin', 'editor']
+      // }
     ]
   },
   {

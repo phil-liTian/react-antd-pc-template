@@ -6,8 +6,9 @@ import Content from './Content'
 import RightPanel from './RightPanel'
 import TagView from './TagsView'
 
-const Main = props => {
+const Main = (props) => {
   const { tagsView } = props
+  console.log('tagsView', tagsView)
   return (
     <Layout style={{ minHeight: '100vh' }}>
       {/* 侧边栏 */}
@@ -24,7 +25,7 @@ const Main = props => {
   )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     ...state.app,
     ...state.setting

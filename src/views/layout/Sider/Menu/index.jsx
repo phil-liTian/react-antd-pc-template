@@ -1,19 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu } from 'antd'
 import menuList from '@/config/menuConfig'
+import { addTag } from '@s/actions'
 import { connect } from 'react-redux'
+import { getMenuItemFromMenuListByProperty } from '@u/index'
 
 function SideMenu (props) {
+  const { addTag } = props
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const [selectedKeys, setSelectedKeys] = useState([pathname])
 
-  const menuItemClick = e => {
+  const menuItemClick = (e) => {
     const { keyPath, key } = e
+    const label = getMenuItemFromMenuListByProperty(menuList, 'key', key).label
+    addTag({ ...e, label })
     navigate(key)
     setSelectedKeys(keyPath)
   }
+
+  useEffect(() => {
+    const matchedItem = menuList.find((item) => item.key === '/dashboard')
+    addTag({ ...matchedItem, label: '首页' })
+  }, [])
 
   return (
     <div className='sidebar-menu-container'>
@@ -28,4 +38,4 @@ function SideMenu (props) {
   )
 }
 
-export default connect(state => state.app)(SideMenu)
+export default connect((state) => state.app, { addTag })(SideMenu)

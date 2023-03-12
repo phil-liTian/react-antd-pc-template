@@ -3,6 +3,7 @@ import TagList from './components/tagList'
 import './index.scss'
 
 const TagView = () => {
+  console.log('APP_TOGGLE_SETTINGPANEL')
   return (
     <div className='tagsView-container'>
       <TagList />
