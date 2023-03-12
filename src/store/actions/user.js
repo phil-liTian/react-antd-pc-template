@@ -26,7 +26,6 @@ export const setUserToken = (token) => {
 
 // 设置用户信息
 export const setUserInfo = (userInfo) => {
-  console.log('userInfo', userInfo)
   return {
     type: types.USER_SET_USER_INFO,
     ...userInfo

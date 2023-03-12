@@ -35,11 +35,11 @@ const injectJsError = () => {
   // 给window注册一个错误监听事件,监听全局未捕获的错误
   window.addEventListener(
     'error',
-    event => {
+    (event) => {
       const errorTarget = event.target
-      console.log('errorTarget', errorTarget.nodeName)
+      // console.log('errorTarget', errorTarget.nodeName)
       const selector = getSelector(errorTarget)
-      console.log('selector', selector)
+      // console.log('selector', selector)
       if (errorTarget !== window) {
         console.log('window')
         tracker.send({

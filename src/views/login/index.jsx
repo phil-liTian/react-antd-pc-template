@@ -25,8 +25,6 @@ const Login = (props) => {
       })
   }
 
-  console.log('token', token)
-
   if (token) {
     return <Navigate to='/dashboard'></Navigate>
   }

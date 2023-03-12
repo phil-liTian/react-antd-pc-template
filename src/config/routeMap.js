@@ -19,6 +19,10 @@ import GuestPage from '@v/permission/guestPage'
 import Table from '@v/table'
 import Menu1_1 from '@v/nested/menu1/menu1-1'
 import Menu1_2_1 from '@v/nested/menu1/menu1-2/menu1-2-1'
+import KeyboardChart from '@v/charts/keyboard'
+import LineChart from '@v/charts/line'
+import MixChart from '@v/charts/mixChart'
+import User from '@v/user'
 
 const routeMap = [
   {
@@ -60,17 +64,21 @@ const routeMap = [
     component: <Draggable />,
     roles: ['admin', 'editor']
   },
-  // {
-  //   path: '/charts/keyboard',
-  //   component: KeyboardChart,
-  //   roles: ['admin', 'editor']
-  // },
-  // { path: '/charts/line', component: LineChart, roles: ['admin', 'editor'] },
-  // {
-  //   path: '/charts/mix-chart',
-  //   component: MixChart,
-  //   roles: ['admin', 'editor']
-  // },
+  {
+    path: '/charts/keyboard',
+    component: <KeyboardChart />,
+    roles: ['admin', 'editor']
+  },
+  {
+    path: '/charts/line',
+    component: <LineChart />,
+    roles: ['admin', 'editor']
+  },
+  {
+    path: '/charts/mix-chart',
+    component: <MixChart />,
+    roles: ['admin', 'editor']
+  },
   {
     path: '/nested/menu1/menu1-1',
     component: <Menu1_1 />,
@@ -94,8 +102,7 @@ const routeMap = [
   },
   { path: '/zip', component: <Zip />, roles: ['admin', 'editor'] },
   { path: '/clipboard', component: <ClipBoard />, roles: ['admin', 'editor'] },
-  // { path: '/user', component: User, roles: ['admin'] },
-  // { path: '/about', component: About, roles: ['admin', 'editor', 'guest'] },
+  { path: '/user', component: <User />, roles: ['admin'] },
   { path: '/bug', component: <Bug />, roles: ['admin'] }
   // { path: '/error/404', component: Error404 }
 ]

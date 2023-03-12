@@ -24,7 +24,7 @@ class SendTracker {
     store.dispatch(addBug(logData))
     // 此时我们也可以将异常信息发送到服务端
     tracker(logData)
-    console.log('logData==>', logData)
+    // console.log('logData==>', logData)
   }
 }
 

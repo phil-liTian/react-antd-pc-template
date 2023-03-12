@@ -8,13 +8,15 @@ import BreadCrumb from '@c/BreadCrumb'
 import FullScreen from '@c/FullScreen'
 import Settings from '@c/Settings'
 import './index.scss'
-import { logout } from '@s/actions'
+import { logout, getUserInfo } from '@s/actions'
 const { Header } = Layout
 
 const LayoutHeader = (props) => {
-  const { avatar, logout, token } = props
+  const { avatar, logout, token, getUserInfo } = props
   const navigate = useNavigate()
 
+  // 获取用户信息
+  token && getUserInfo(token)
   // 注销
   const onLayout = () => {
     Modal.confirm({
@@ -88,4 +90,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { logout })(LayoutHeader)
+export default connect(mapStateToProps, { logout, getUserInfo })(LayoutHeader)

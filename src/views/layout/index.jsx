@@ -8,7 +8,6 @@ import TagView from './TagsView'
 
 const Main = (props) => {
   const { tagsView } = props
-  console.log('tagsView', tagsView)
   return (
     <Layout style={{ minHeight: '100vh' }}>
       {/* 侧边栏 */}
